@@ -11,13 +11,11 @@
         $('#mens_lastdate').datepicker({
             format: 'dd/mm/yyyy',
             todayBtn: false,
-            //language: 'th', //เปลี่ยน label ต่างของ ปฏิทิน ให้เป็น ภาษาไทย   (ต้องใช้ไฟล์ bootstrap-datepicker.th.min.js นี้ด้วย)
-            language: 'en', //เปลี่ยน label ต่างของ ปฏิทิน ให้เป็น ภาษาไทย   (ต้องใช้ไฟล์ bootstrap-datepicker.th.min.js นี้ด้วย)
+            language: 'en', //เปลี่ยน label ต่างของ ปฏิทิน ให้เป็น ภาษาไทย 'th' (ต้องใช้ไฟล์ bootstrap-datepicker.th.min.js นี้ด้วย)
             autoclose: true,
             todayHighlight: true,
             orientation: "top auto",
-            // thaiyear: true              //Set เป็นปี พ.ศ.
-             thaiyear: false              //Set เป็นปี พ.ศ.            
+             thaiyear: false              //Set เป็นปี พ.ศ. | true           
             // startDate: "+0d",    // disable วันที่ ผ่านมา
             // defaultViewDate: "+0d"
         }).on('change', function () {
@@ -26,7 +24,7 @@
             // call function
             var age = getAge(this);
         });
-        // get date & convert dateTH->dateEN | 31/12/2563 -> 31/12/2020
+        // get date & convert dateTH->dateEN | Ex. 31/12/2563 -> 31/12/2020
         function getAge(dateVal) {
             var thDate = dateVal.value;
             // get string day,month,year
